@@ -21,4 +21,4 @@ const debounce = (func, delay = 1000) => {
             func.apply(null, args);
             }, delay);
     };
-};
+}; 
