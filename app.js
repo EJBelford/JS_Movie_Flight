@@ -1,17 +1,17 @@
-function random(rng) {
+const random = function (rng) {
     // console.log(`rng: ${rng}`)
     let rnd = Math.floor(Math.random() * rng) + 1;
     // console.log(`Random: ${rnd}`);
     return rnd;
 }
 
-function rollDie(numSides) {
+const rollDie function (numSides) {
     let roll = random(numSides); 
     // console.log(`Rolled: ${roll}`);
     return roll;
 }
 
-function throwDice(numRolls) {
+const throwDice function (numRolls) {
     for (let i = 0; i < numRolls; i++) {
         // console.log(`i: ${i}`);
         let roll = rollDie(6);
@@ -19,7 +19,7 @@ function throwDice(numRolls) {
     }
 } 
 
-function isValidPassword(pwd, userId) { 
+isValidPassword function (pwd, userId) { 
     if (pwd.length < 8) {
         return false;
     }
@@ -58,7 +58,7 @@ function getCard() {
     return { card: pick(cards), suit: pick(suits) };
 }
 
-console.log(getCard());
+/* console.log(getCard());
 sleep(50);
 console.log(getCard());
 sleep(50);
@@ -66,7 +66,7 @@ console.log(getCard());
 sleep(50);
 console.log(getCard());
 sleep(50);
-console.log(getCard());
+console.log(getCard()); */
 
 /* let avgNum = avg([1, 2]);
 console.log(avgNum);
@@ -85,5 +85,5 @@ console.log(isValidPassword('password', 'Password'));
 console.log(isValidPassword('password', 'EJBelford'));
 console.log(isValidPassword('password', 'password'));   */
 
-// random(6);
+random(6);
 // throwDice(2);
