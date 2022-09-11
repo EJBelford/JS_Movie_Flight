@@ -70,7 +70,12 @@ const onInput = async event => {
         option.innerHTML = `
             <img src="${imgSrc}" /> 
             ${movie.Title}
-        `;
+        `; 
+        option.addEventListener('click', () => {
+            dropdown.classList.remove('is-active'); 
+            input.value = movie.Title; 
+            onMovieSelect(movie); 
+        });
 
         resultsWrapper.appendChild(option);
     }
@@ -82,4 +87,17 @@ document.addEventListener('click', event => {
     if (!root.contains(event.target)) {
         dropdown.classList.remove('is-active');
     }
-})
+});
+
+const onMovieSelect = async movie => {
+    // console.log(movie);
+    const response = await axios.get('http://www.omdbapi.com/', {
+        params: {
+            apikey: '8187c43',
+ //            s: searchTerm
+            i: movie.imdbID
+        }
+    });
+
+    console.log(response.data);
+};
