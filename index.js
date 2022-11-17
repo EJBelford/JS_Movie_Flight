@@ -38,7 +38,6 @@
 };  */
 
 /*----------------*/
-
 let leftMovie;
 let rightMovie;
 
